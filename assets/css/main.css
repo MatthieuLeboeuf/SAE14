@@ -69,14 +69,62 @@ footer {
 
 /* content */
 
-#content {
+section {
     margin: 5%;
+    display: flex;
+    align-items: center;
 }
 
-#content h1 {
+section h1 {
     text-decoration: underline;
+}
+
+section p {
+    font-size: 17px;
+}
+
+section a {
+    color: black;
+    text-decoration-color: #ff9f43;
+}
+
+section a:hover {
+    text-decoration-color: #341f97;
 }
 
 table, th, td {
     border: 1px solid black;
+}
+
+@media (max-width: 800px) {
+    section {
+        flex-direction: column;
+    }
+}
+
+/* content index */
+
+#copenhague {
+    width: 500px;
+    border-radius: 10px;
+    margin-left: 75px;
+}
+
+@media (max-width: 800px) {
+    #copenhague {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* content data */
+
+section table tr {
+    padding: 10px;
+}
+
+#munch {
+    width: 500px;
+    border-radius: 10px;
+    margin-right: 75px;
 }
