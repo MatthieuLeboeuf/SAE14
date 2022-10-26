@@ -58,7 +58,6 @@ nav li:hover .hidden {
 /* footer */
 
 footer {
-    position: absolute;
     background-color: #576574;
     text-align: center;
     padding: 10px 0 10px 0;
@@ -92,10 +91,6 @@ section a:hover {
     text-decoration-color: #341f97;
 }
 
-table, th, td {
-    border: 1px solid black;
-}
-
 @media (max-width: 800px) {
     section {
         flex-direction: column;
@@ -119,8 +114,17 @@ table, th, td {
 
 /* content data */
 
-section table tr {
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
     padding: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
 }
 
 #munch {
