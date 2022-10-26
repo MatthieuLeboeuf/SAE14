@@ -1,9 +1,13 @@
+/* Retirer la marge et le padding de base */
+
 body {
     margin: 0;
     padding: 0;
 }
 
 /* header */
+
+/* Partie grise avec flex pour positionner les éléments */
 
 header {
     display: flex;
@@ -13,19 +17,25 @@ header {
 }
 
 @media (max-width: 800px) {
+    /* Sur mobile le menu est en colonne */
     header {
         flex-direction: column;
     }
+    /* Pas de padding pour que les liens soient centrés */
     header ul {
         padding-left: 0;
     }
 }
+
+/* Un flex:1 à tous les éléments présents dans header donc deux nav et un h1 */
 
 header > * {
     flex: 1;
 }
 
 /* navbar */
+
+/* Spécifique à la barre de menu */
 
 header a {
     color: white;
@@ -35,6 +45,8 @@ header a {
 nav li {
     display: inline;
 }
+
+/* Ajout d'une marge à droite à tout les li sauf au dernier */
 
 nav li:not(:last-child) {
     margin-right: 5px;
@@ -57,7 +69,17 @@ nav li:hover .hidden {
 
 /* footer */
 
+@media (max-width: 800px) {
+    /* Cela permet de ne pas cacher les éléments derrière le footer */
+    #margin {
+        margin-top: 70px;
+    }
+}
+
+/* Cela définit le footer */
+
 footer {
+    position: fixed;
     background-color: #576574;
     text-align: center;
     padding: 10px 0 10px 0;
@@ -69,18 +91,24 @@ footer {
 /* content */
 
 section {
-    margin: 5%;
+    margin: 4% 15% 4% 15%;
     display: flex;
     align-items: center;
 }
+
+/* Les titres h2 sont soulignées */
 
 section h2 {
     text-decoration: underline;
 }
 
+/* Taille de caractère des paragraphes */
+
 section p {
     font-size: 17px;
 }
+
+/* Ajout d'un style pour les liens */
 
 section a {
     color: black;
@@ -92,27 +120,43 @@ section a:hover {
 }
 
 @media (max-width: 800px) {
+    /* Pareil que pour la barre de navigation, éléments en colonne */
     section {
         flex-direction: column;
     }
 }
 
+/* Applique une taille et un bordure aux trois images */
+
+#copenhague img, #munch img, #portrait img {
+    width: 500px;
+    border-radius: 10px;
+}
+
 /* content index */
 
 #copenhague {
-    width: 500px;
-    border-radius: 10px;
     margin-left: 75px;
 }
 
 @media (max-width: 800px) {
     #copenhague {
-        width: 100%;
         margin-left: 0;
+    }
+    #copenhague img {
+        width: 100%;
     }
 }
 
 /* content data */
+
+/* Enlève la bordure en trop */
+
+table {
+    border-collapse: collapse;
+}
+
+/* Bordure de 1px pour le tableau et toutes les cellules */
 
 table, th, td {
     border: 1px solid black;
@@ -123,12 +167,47 @@ th, td {
     text-align: center;
 }
 
-table {
-    border-collapse: collapse;
+#video {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#video iframe {
+    border: none;
 }
 
 #munch {
-    width: 500px;
-    border-radius: 10px;
     margin-right: 75px;
+}
+
+@media (max-width: 800px) {
+    #video iframe {
+        width: 90%;
+    }
+    #munch {
+        margin-right: 0;
+    }
+    #munch img {
+        width: 100%;
+    }
+}
+
+/* content about */
+
+#about {
+    display: block;
+}
+
+#portrait {
+    text-align: center;
+}
+
+#portrait img {
+    width: 200px;
+}
+
+@media (max-width: 800px) {
+    #portrait img {
+        width: 200px;
+    }
 }
